@@ -1,15 +1,11 @@
-<script src="https://giscus.app/client.js"
-        data-repo="alteriza/alteriza.github.io"
-        data-repo-id="R_kgDOSlpSHw"
-        data-category="[MASUKKAN NAMA KATEGORI DI SINI]"
-        data-category-id="[MASUKKAN ID KATEGORI DI SINI]"
-        data-mapping="pathname"
-        data-strict="0"
-        data-reactions-enabled="1"
-        data-emit-metadata="1"
-        data-input-position="top"
-        data-theme="dark_high_contrast"
-        data-lang="id"
-        crossorigin="anonymous"
-        async>
-</script>
+```html
+---
+layout: default
+---
+<article>
+  <h1>{{ page.title }}</h1>
+  <p class="date">{{ page.date | date: "%d %B %Y" }}</p>
+  <div class="content">
+    {{ content }}
+  </div>
+</article>
