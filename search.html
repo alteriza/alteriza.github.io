@@ -1,0 +1,22 @@
+---
+layout: default
+title: Cari Thread
+---
+<div class="search-page">
+  <h2>🔍 Cari artikel</h2>
+  <input type="text" id="search-input" placeholder="Ketik judul atau kata kunci..." autocomplete="off">
+  <ul id="results-container" class="search-results"></ul>
+</div>
+
+<script src="{{ '/assets/js/search.js' | relative_url }}"></script>
+<script>
+  SimpleJekyllSearch({
+    searchInput: document.getElementById('search-input'),
+    resultsContainer: document.getElementById('results-container'),
+    json: '/search.json',
+    searchResultTemplate: '<li><a href="{url}">{title}</a><span class="date">{date}</span></li>',
+    noResultsText: 'Tidak ada thread yang cocok',
+    limit: 10,
+    fuzzy: false
+  });
+</script>
