@@ -1,0 +1,24 @@
+title: Alteriza Blog
+description: Catatan, tutorial, dan ide-ide gila dari Alteriza
+url: "https://alteriza.github.io" # GANTI dengan username GitHub-mu
+baseurl: "" 
+
+permalink: /:title/
+
+# Collections for search
+collections:
+  posts:
+    output: true
+    permalink: /posts/:path/
+
+# Build settings
+theme: jekyll-theme-primer
+plugins:
+  - jekyll-feed
+
+# Exclude from processing
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - node_modules
+  - vendor
