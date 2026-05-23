@@ -28,16 +28,22 @@
     </div>
 
     <footer>
-      <p>Total pengunjung: <span id="visitor-counter">0</span></p>
-      <p>&copy; 2025 alteriza</p>
-    </footer>
-  </div>
-  <!-- Visitor counter -->
-  <script>
-    fetch('https://api.countapi.xyz/hit/alteriza-blog/visits')
-      .then(res => res.json())
-      .then(data => document.getElementById('visitor-counter').innerText = data.value)
-      .catch(() => document.getElementById('visitor-counter').innerText = '?');
-  </script>
+  <p>Total pengunjung: <span id="visitor-counter">0</span></p>
+  <p>&copy; 2025 alteriza</p>
+</footer>
+
+<!-- Visitor counter baru menggunakan CounterAPI -->
+<script>
+  // Menggunakan nama repositori Anda sebagai ID unik agar hitungannya akurat
+  fetch('https://counterapi.dev')
+    .then(res => res.json())
+    .then(data => {
+      // CounterAPI mengembalikan data berupa objek { count: nilai }
+      document.getElementById('visitor-counter').innerText = data.count;
+    })
+    .catch(() => {
+      document.getElementById('visitor-counter').innerText = '?';
+    });
+</script>
 </body>
 </html>
