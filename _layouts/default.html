@@ -1,9 +1,45 @@
-<footer>
-  <p>Total pengunjung: <span id="visitor-counter">0</span></p>
-</footer>
-<script>
-  fetch('https://api.countapi.xyz/hit/alteriza-blog/visits')
-    .then(res => res.json())
-    .then(data => document.getElementById('visitor-counter').innerText = data.value)
-    .catch(() => document.getElementById('visitor-counter').innerText = '?');
-</script>
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{{ page.title }} - {{ site.title }}</title>
+  <link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}">
+  <!-- Simple-Jekyll-Search -->
+  <script src="https://cdn.jsdelivr.net/npm/simple-jekyll-search@1.10.0/dest/simple-jek-search.min.js"></script>
+</head>
+<body>
+  <div class="wrapper">
+    <header class="site-header">
+      <h1><a href="{{ '/' | relative_url }}">{{ site.title }}</a></h1>
+      <nav>
+        <a href="{{ '/' | relative_url }}">Home</a>
+        <a href="{{ '/search.html' | relative_url }}">Search</a>
+        <a href="{{ '/komunitas.html' | relative_url }}">Komunitas</a>
+      </nav>
+    </header>
+
+    <div class="container">
+      <main class="content">
+        {{ content }}
+      </main>
+      <aside class="sidebar">
+        {% include sidebar.html %}
+      </aside>
+    </div>
+
+    <footer>
+      <p>Total pengunjung: <span id="visitor-counter">0</span></p>
+      <p>&copy; 2025 alteriza</p>
+    </footer>
+  </div>
+
+  <!-- Visitor counter -->
+  <script>
+    fetch('https://api.countapi.xyz/hit/alteriza-blog/visits')
+      .then(res => res.json())
+      .then(data => document.getElementById('visitor-counter').innerText = data.value)
+      .catch(() => document.getElementById('visitor-counter').innerText = '?');
+  </script>
+</body>
+</html>
