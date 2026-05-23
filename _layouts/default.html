@@ -28,29 +28,31 @@
     </div>
     <footer>
   <p>Total pengunjung: <span id="visitor-counter">0</span></p>
-  <p>&copy; 2025 alteriza</p>
+  <p>&copy; 2026 alteriza</p>
 </footer>
+
+<!-- 1. Memuat Pustaka Resmi CounterAPI via CDN -->
+<script src="https://cdn.jsdelivr.net/npm/counterapi/dist/counter.browser.min.js"></script>
+
+<!-- 2. Menjalankan Fungsi Hitung Pengunjung -->
 <script>
-  // Menggunakan endpoint resmi counterapi.dev v1
-  fetch('https://counterapi.dev')
-    .then(res => {
-      if (!res.ok) throw new Error('API Error');
-      return res.json();
-    })
-    .then(data => {
-      // Mengambil nilai angka terlepas dari apakah propertinya bernama .value atau .count
-      const countValue = data.value !== undefined ? data.value : data.count;
-      
-      if (countValue !== undefined) {
-        document.getElementById('visitor-counter').innerText = countValue;
-      } else {
-        document.getElementById('visitor-counter').innerText = '?';
-      }
-    })
-    .catch(err => {
-      console.error('Gagal memuat counter:', err);
-      document.getElementById('visitor-counter').innerText = '?';
+  document.addEventListener('DOMContentLoaded', function() {
+    // Inisialisasi menggunakan nama blog Anda sebagai ruang kerja (workspace)
+    const counter = new Counter({
+      workspace: 'alteriza-blog'
     });
+
+    // Menambahkan hitungan (up) pada data berlabel 'homepage-visits'
+    counter.up('homepage-visits')
+      .then(result => {
+        // Memasukkan hasil angka langsung ke elemen teks halaman blog
+        document.getElementById('visitor-counter').innerText = result.value;
+      })
+      .catch(error => {
+        console.error('Eror Counter:', error);
+        document.getElementById('visitor-counter').innerText = '?';
+      });
+  });
 </script>
 </body>
 </html>
