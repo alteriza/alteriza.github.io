@@ -1,6 +1,6 @@
-title: Protocol404 Blog
+title: alteriza blog
 description: Catatan, tutorial, dan komunitas
-url: "https://protocol404.github.io"   # ganti dengan username-mu
+url: "https://alteriza.github.io"
 baseurl: ""
 
 permalink: /:title/
