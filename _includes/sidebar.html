@@ -1,6 +1,16 @@
-<h3>Postingan Terbaru</h3>
-<ul>
-  {% for post in site.posts limit:5 %}
-    <li><a href="{{ post.url }}">{{ post.title }}</a></li>
-  {% endfor %}
-</ul>
+<div class="sidebar-widget">
+  <h3>📝 Postingan Terbaru</h3>
+  <ul>
+    {% for post in site.posts limit:5 %}
+      <li><a href="{{ post.url | relative_url }}">{{ post.title }}</a></li>
+    {% endfor %}
+  </ul>
+</div>
+<div class="sidebar-widget">
+  <h3>🏷️ Kategori</h3>
+  <ul>
+    {% for category in site.categories %}
+      <li><a href="{{ '/kategori/' | relative_url }}{{ category[0] | slugify }}">{{ category[0] }} ({{ category[1].size }})</a></li>
+    {% endfor %}
+  </ul>
+</div>
