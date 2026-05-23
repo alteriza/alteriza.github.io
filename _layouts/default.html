@@ -26,22 +26,29 @@
         {% include sidebar.html %}
       </aside>
     </div>
-
     <footer>
   <p>Total pengunjung: <span id="visitor-counter">0</span></p>
-  <p>&copy; 2026 Alteriza</p>
+  <p>&copy; 2025 alteriza</p>
 </footer>
-
-<!-- Visitor counter baru menggunakan CounterAPI -->
 <script>
-  // Menggunakan nama repositori Anda sebagai ID unik agar hitungannya akurat
+  // Menggunakan endpoint resmi counterapi.dev v1
   fetch('https://counterapi.dev')
-    .then(res => res.json())
-    .then(data => {
-      // CounterAPI mengembalikan data berupa objek { count: nilai }
-      document.getElementById('visitor-counter').innerText = data.count;
+    .then(res => {
+      if (!res.ok) throw new Error('API Error');
+      return res.json();
     })
-    .catch(() => {
+    .then(data => {
+      // Mengambil nilai angka terlepas dari apakah propertinya bernama .value atau .count
+      const countValue = data.value !== undefined ? data.value : data.count;
+      
+      if (countValue !== undefined) {
+        document.getElementById('visitor-counter').innerText = countValue;
+      } else {
+        document.getElementById('visitor-counter').innerText = '?';
+      }
+    })
+    .catch(err => {
+      console.error('Gagal memuat counter:', err);
       document.getElementById('visitor-counter').innerText = '?';
     });
 </script>
