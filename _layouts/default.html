@@ -5,12 +5,12 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>{{ page.title }} - {{ site.title }}</title>
   <link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}">
-  <!-- Simple-Jekyll-Search -->
   <script src="https://cdn.jsdelivr.net/npm/simple-jekyll-search@1.10.0/dest/simple-jek-search.min.js"></script>
 </head>
 <body>
   <div class="wrapper">
     <header class="site-header">
+      <!-- PASTIKAN pakai relative_url -->
       <h1><a href="{{ '/' | relative_url }}">{{ site.title }}</a></h1>
       <nav>
         <a href="{{ '/' | relative_url }}">Home</a>
@@ -33,7 +33,6 @@
       <p>&copy; 2025 alteriza</p>
     </footer>
   </div>
-
   <!-- Visitor counter -->
   <script>
     fetch('https://api.countapi.xyz/hit/alteriza-blog/visits')
