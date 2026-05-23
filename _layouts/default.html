@@ -27,33 +27,7 @@
       </aside>
     </div>
 <footer>
-  <p>Total pengunjung: 
-    <img src="https://hits.sh" alt="Visitor Counter" style="vertical-align: middle;">
-  </p>
-  <p>&copy; 2026 alteriza</p>
+  <p>&copy; 2026 Alteriza</p>
 </footer>
-<!-- 1. Memuat Pustaka Resmi CounterAPI via CDN -->
-<script src="https://cdn.jsdelivr.net/npm/counterapi/dist/counter.browser.min.js"></script>
-
-<!-- 2. Menjalankan Fungsi Hitung Pengunjung -->
-<script>
-  document.addEventListener('DOMContentLoaded', function() {
-    // Inisialisasi menggunakan nama blog Anda sebagai ruang kerja (workspace)
-    const counter = new Counter({
-      workspace: 'alteriza-blog'
-    });
-
-    // Menambahkan hitungan (up) pada data berlabel 'homepage-visits'
-    counter.up('homepage-visits')
-      .then(result => {
-        // Memasukkan hasil angka langsung ke elemen teks halaman blog
-        document.getElementById('visitor-counter').innerText = result.value;
-      })
-      .catch(error => {
-        console.error('Eror Counter:', error);
-        document.getElementById('visitor-counter').innerText = '?';
-      });
-  });
-</script>
 </body>
 </html>
