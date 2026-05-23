@@ -2,27 +2,27 @@
 <html lang="id">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>@protocol404 | Portfolio & Creative Tech</title>
-  <!-- Font Awesome 6 (Icons) -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+  <title>Protocol404 Blog | Catatan & Komunitas</title>
+  <!-- Font Awesome 6 -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
   <!-- Custom CSS -->
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <!-- Animated Background -->
   <div class="animated-bg"></div>
 
-  <!-- Navigation -->
+  <!-- Header / Navbar -->
   <nav class="glass-nav">
     <div class="nav-container">
       <div class="logo">
         <span class="logo-text">Protocol<span class="accent">404</span></span>
+        <span class="logo-badge">BLOG</span>
       </div>
       <div class="nav-links">
-        <a href="#home" class="nav-link active">Home</a>
-        <a href="#projects" class="nav-link">Projects</a>
-        <a href="#contact" class="nav-link">Contact</a>
+        <a href="#" data-page="home" class="nav-link active">Home</a>
+        <a href="#" data-page="search" class="nav-link">Search</a>
+        <a href="#" data-page="community" class="nav-link">Komunitas</a>
       </div>
       <div class="menu-toggle">
         <i class="fas fa-bars"></i>
@@ -30,150 +30,9 @@
     </div>
   </nav>
 
-  <!-- Main Content -->
-  <main>
-    <!-- Hero Section -->
-    <section id="home" class="hero-section">
-      <div class="hero-content">
-        <div class="hero-badge">
-          <i class="fas fa-code"></i> Creative Technologist
-        </div>
-        <h1 class="glitch-text" data-text="Hi, I'm Protocol404">Hi, I'm <span class="accent">Protocol404</span></h1>
-        <p class="hero-desc">Building digital experiences that break the mold.<br>Exploring the intersection of code, design, and <span class="highlight">error-free creativity</span>.</p>
-        <div class="hero-buttons">
-          <a href="#projects" class="btn btn-primary">Explore Work <i class="fas fa-arrow-right"></i></a>
-          <a href="#contact" class="btn btn-outline">Get in Touch</a>
-        </div>
-        <div class="hero-stats">
-          <div class="stat">
-            <span class="stat-number" data-target="47">0</span>+
-            <span class="stat-label">Projects Done</span>
-          </div>
-          <div class="stat">
-            <span class="stat-number" data-target="12">0</span>+
-            <span class="stat-label">Happy Clients</span>
-          </div>
-          <div class="stat">
-            <i class="fab fa-github"></i>
-            <span class="stat-label">Open Source</span>
-          </div>
-        </div>
-      </div>
-      <div class="hero-graphic">
-        <div class="code-window">
-          <div class="window-bar">
-            <span class="window-dot red"></span>
-            <span class="window-dot yellow"></span>
-            <span class="window-dot green"></span>
-            <span class="window-title">portfolio.tsx</span>
-          </div>
-          <div class="window-content">
-            <pre><code><span class="keyword">const</span> <span class="variable">developer</span> = {
-  name: <span class="string">"<span id="typed-name"></span>"</span>,
-  stack: [<span class="string">"React"</span>, <span class="string">"Node.js"</span>, <span class="string">"Python"</span>],
-  passion: <span class="string">"Creating Impact"</span>,
-  errorRate: <span class="number">0.04</span> <span class="comment">// 404 not found :)</span>
-};</code></pre>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Projects Section -->
-    <section id="projects" class="projects-section">
-      <div class="container">
-        <div class="section-header">
-          <h2>Featured <span class="accent">Projects</span></h2>
-          <p>Some of my best work, open source and ready to explore.</p>
-        </div>
-        <div class="projects-grid">
-          <!-- Project Card 1 -->
-          <div class="project-card">
-            <div class="card-inner">
-              <div class="card-front">
-                <i class="fab fa-github-alt project-icon"></i>
-                <h3>Protocol API</h3>
-                <p>A robust RESTful API built with Node.js and Express.</p>
-                <span class="tech-tag">Node.js</span>
-                <span class="tech-tag">Express</span>
-              </div>
-              <div class="card-back">
-                <p>High-performance backend with JWT auth, rate limiting, and full documentation.</p>
-                <a href="#" class="card-link">View on GitHub <i class="fas fa-external-link-alt"></i></a>
-              </div>
-            </div>
-          </div>
-          <!-- Project Card 2 -->
-          <div class="project-card">
-            <div class="card-inner">
-              <div class="card-front">
-                <i class="fas fa-film project-icon"></i>
-                <h3>GajeInAja Studio</h3>
-                <p>Creative content & motion graphics portfolio.</p>
-                <span class="tech-tag">After Effects</span>
-                <span class="tech-tag">Premiere Pro</span>
-              </div>
-              <div class="card-back">
-                <p>Showcasing video editing projects, tutorials, and creative direction for YouTube.</p>
-                <a href="#" class="card-link">Watch on YouTube <i class="fas fa-external-link-alt"></i></a>
-              </div>
-            </div>
-          </div>
-          <!-- Project Card 3 -->
-          <div class="project-card">
-            <div class="card-inner">
-              <div class="card-front">
-                <i class="fas fa-chart-line project-icon"></i>
-                <h3>404 Analytics</h3>
-                <p>Real-time dashboard for error monitoring.</p>
-                <span class="tech-tag">React</span>
-                <span class="tech-tag">D3.js</span>
-              </div>
-              <div class="card-back">
-                <p>Interactive visualization of system logs and error rates. Beautiful and insightful.</p>
-                <a href="#" class="card-link">Live Demo <i class="fas fa-external-link-alt"></i></a>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Contact Section -->
-    <section id="contact" class="contact-section">
-      <div class="container">
-        <div class="section-header">
-          <h2>Get in <span class="accent">Touch</span></h2>
-          <p>Have a project in mind? Let's create something great together.</p>
-        </div>
-        <div class="contact-container">
-          <div class="contact-info">
-            <h3>Let's Connect</h3>
-            <p>I'm always excited to collaborate on innovative projects. Feel free to reach out through any of these platforms.</p>
-            <div class="social-links">
-              <a href="#" class="social-icon"><i class="fab fa-github"></i></a>
-              <a href="#" class="social-icon"><i class="fab fa-linkedin-in"></i></a>
-              <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
-              <a href="#" class="social-icon"><i class="fab fa-youtube"></i></a>
-              <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
-            </div>
-          </div>
-          <form class="contact-form" id="contactForm">
-            <div class="form-group">
-              <input type="text" id="name" placeholder="Your Name" required>
-            </div>
-            <div class="form-group">
-              <input type="email" id="email" placeholder="Your Email" required>
-            </div>
-            <div class="form-group">
-              <textarea id="message" rows="5" placeholder="Your Message" required></textarea>
-            </div>
-            <button type="submit" class="btn btn-primary">Send Message <i class="fas fa-paper-plane"></i></button>
-            <p class="form-message" id="formMessage"></p>
-          </form>
-        </div>
-      </div>
-    </section>
+  <!-- Main Konten Dinamis -->
+  <main id="main-content">
+    <!-- Halaman HOME akan diisi JS -->
   </main>
 
   <!-- Footer -->
@@ -182,21 +41,19 @@
       <div class="footer-content">
         <div class="footer-logo">
           <span class="logo-text">Protocol<span class="accent">404</span></span>
-          <p>© 2025 All Rights Reserved</p>
+          <p>© 2025 - Open source blog</p>
         </div>
-        <div class="footer-links">
-          <a href="#home">Home</a>
-          <a href="#projects">Projects</a>
-          <a href="#contact">Contact</a>
+        <div class="footer-stats">
+          <i class="fas fa-eye"></i> <span id="visitor-counter">0</span> total pengunjung
         </div>
         <div class="footer-credit">
-          <p>Built with <i class="fas fa-heart"></i> using HTML/CSS/JS</p>
+          <p>Powered by <i class="fab fa-github"></i> & <i class="fas fa-heart"></i></p>
         </div>
       </div>
     </div>
   </footer>
 
-  <!-- JavaScript -->
+  <!-- Utterances Script akan dimuat saat halaman komunitas atau thread -->
   <script src="script.js"></script>
 </body>
 </html>
