@@ -2,10 +2,10 @@
 layout: default
 title: Beranda
 ---
-<div class="posts-list">
+<div class="posts-list fade-up">
   <h2>Semua Thread</h2>
   {% for post in site.posts %}
-    <article class="post-preview">
+    <article class="post-preview fade-up">
       <h3><a href="{{ post.url | relative_url }}">{{ post.title }}</a></h3>
       <div class="post-meta">{{ post.date | date: "%d %b %Y" }} • {{ post.categories | join: ', ' }}</div>
       <p>{{ post.excerpt | strip_html | truncatewords: 20 }}</p>
